@@ -60,7 +60,7 @@
             <button class="modal__close"></button>
             <h5 class="modal__title">подписаться на рассылку</h5>
             <form>
-                <div class="form_input">
+                <div class="form_input error">
                     <input type="email" placeholder="" required>
                     <p class="form_placeholder">Электронная почта*</p>
                 </div>
@@ -68,6 +68,7 @@
                     <input type="checkbox" id="2" required>
                     <label for="2">Я прочел(-ла) и понимаю Политику конфиденциальности, даю согласие на обработку моих персональных данных, а так же согласен(-на) получать коммерческие сообщения от SAMM.</label>
                 </div>
+                <p class="not_filled">Не все поля формы заполнены</p>
                 <button type="submit" class="main_btn">подписаться</button>
             </form>
         </div>
@@ -97,11 +98,11 @@
                 <div class="collection__wrap">
                     <h1>Коллекция 2023-2024</h1>
                     <div class="collection__box">
-                        <a href="#" class="main_btn collection__item">линейный лист</a>
-                        <a href="#" class="main_btn collection__item">каталог 2023-2024</a>
-                        <a href="#" class="main_btn collection__item">лукбук с 1 по 4 класс</a>
-                        <a href="#" class="main_btn collection__item">лукбук с 5 по 11 класс</a>
-                        <a href="#" class="main_btn collection__item">samm брендбук</a>
+                        <a href="#" class="main_btn collection__item loading">линейный лист</a>
+                        <a href="#" class="main_btn collection__item loading">каталог 2023-2024</a>
+                        <a href="#" class="main_btn collection__item loading">лукбук с 1 по 4 класс</a>
+                        <a href="#" class="main_btn collection__item loading">лукбук с 5 по 11 класс</a>
+                        <a href="#" class="main_btn collection__item disable ">samm брендбук</a>
                     </div>
                 </div>
             </div>
@@ -124,15 +125,21 @@
                                     </div>
                                 </div>
                                 <div class="application__block">
-                                    <div class="form_input">
-                                        <input type="text" placeholder="" required>
+                                    <div class="form_input done open">
+                                        <input type="text" placeholder="" required checked value="Анастасия Склярова">
                                         <p class="form_placeholder">Школа*</p>
+                                        <div class="done_icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                                                <path d="M1 5L5 10L10 1" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="application__block">
-                                    <div class="form_input">
+                                    <div class="form_input error">
                                         <input type="text" placeholder="" required>
                                         <p class="form_placeholder">Фамилия и имя*</p>
+                                        <p class="error_message">Укажите фамилию и имя через пробел</p>
                                     </div>
                                 </div>
                                 <div class="application__block">
@@ -148,13 +155,30 @@
                                     </div>
                                 </div>
                                 <div class="application__block">
-                                    <div class="form_checkbox">
+                                    <div class="form_checkbox error">
                                         <input type="checkbox" id="1" required>
                                         <label for="1">Я прочел(-ла) и понимаю <a href="#">Политику конфиденциальности</a>, даю согласие на обработку моих персональных данных, а так же согласен(-на) получать коммерческие сообщения от SAMM.</label>
                                     </div>
+                                    
                                 </div>
                                 <div class="application__block">
-                                    
+                                    <div class="message_sent">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="12" viewBox="0 0 11 12" fill="none">
+                                                <path d="M1 5L5 10L10 1" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                        <p>Заявка успешно отправлена!</p>
+                                    </div>
+                                    <div class="message_not_sent">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
+                                                <path d="M1 1L10 10" stroke="white" stroke-width="2"/>
+                                                <path d="M10 1L1 10" stroke="white" stroke-width="2"/>
+                                            </svg>
+                                        </div>
+                                        <p>Не все поля формы заполнены!</p>
+                                    </div>
                                 </div>
                                 <div class="application__block">
                                     <button type="submit" class="main_btn">отправить</button>
@@ -240,7 +264,7 @@
                     </ul>
                     <div class="footer__bottom">
                         <p class="text">Чтобы всегда быть в курсе новостей интернет-магазина SAMM, подпишитесь на нашу рассылку!</p>
-                        <button class="black_btn modal-open">подписаться <span>на рассылку</span></button>
+                        <button class="black_btn modal-open loading">подписаться <span>на рассылку</span></button>
                     </div>
                 </div>
             </div>

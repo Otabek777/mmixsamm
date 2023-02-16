@@ -63,6 +63,27 @@ ul, ol {
   padding: 0 15px;
 }
 
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0);
+            transform: translate(-50%, -50%) rotate(0);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 .black_btn {
   display: inline-block;
   padding: 20px 30px;
@@ -81,6 +102,7 @@ ul, ol {
   color: #FFFFFF;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  position: relative;
 }
 .black_btn span {
   display: none;
@@ -107,11 +129,40 @@ ul, ol {
   border: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  position: relative;
 }
 .main_btn span {
   display: none;
   white-space: nowrap;
   margin: 0 6px;
+}
+
+.main_btn.loading, .black_btn.loading {
+  color: transparent;
+}
+
+.main_btn.loading::after, .black_btn.loading::after {
+  content: "";
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url(../img/loading1.svg) no-repeat center;
+  -webkit-animation-name: loading;
+          animation-name: loading;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.black_btn.loading::after {
+  background: url(../img/loading2.svg) no-repeat center;
 }
 
 .main_btn:hover {
@@ -121,6 +172,11 @@ ul, ol {
 
 .main_btn:focus {
   background: #F1C114;
+  opacity: 0.9;
+}
+
+.main_btn.disable, .black_btn.disable {
+  background: #FFEEB2;
   opacity: 0.9;
 }
 
@@ -157,8 +213,19 @@ ul, ol {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+.modal__block .form_checkbox {
+  margin-bottom: 30px;
+}
 .modal__block .form_input {
   margin-bottom: 30px;
+}
+.modal__block .not_filled {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+  color: #B30000;
+  margin-bottom: 10px;
 }
 
 .modal__title {
@@ -221,15 +288,15 @@ ul, ol {
   width: 48px;
 }
 
-.modal#moda-done .modal__block {
+.modal#modal-done .modal__block {
   padding-top: 60px;
 }
-.modal#moda-done .modal__title {
+.modal#modal-done .modal__title {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 40px;
 }
-.modal#moda-done .black_btn {
+.modal#modal-done .black_btn {
   margin: 0 auto;
 }
 
@@ -365,18 +432,10 @@ h1 {
   max-width: 265px;
   width: 100%;
   min-height: 60px;
-  padding: 20px 0;
   margin-right: 30px;
-  background: #F1C114;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
   text-align: center;
-  text-transform: uppercase;
   color: #0F0000;
   margin-bottom: 30px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .collection__item:last-child {
@@ -385,16 +444,6 @@ h1 {
 
 .collection__item:nth-child(2n), .collection__item:last-child {
   margin-right: 0;
-}
-
-.collection__item:hover {
-  background: #FFDE6A;
-  opacity: 0.9;
-}
-
-.collection__item:focus {
-  background: #F1C114;
-  opacity: 0.9;
 }
 
 .application {
@@ -484,6 +533,90 @@ h1 {
   z-index: 2;
 }
 
+.form_input.error {
+  background: #FFD4D4;
+}
+
+.error_message {
+  position: absolute;
+  left: 20px;
+  bottom: -20px;
+  z-index: -1;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  color: #B30000;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.form_input.done.open {
+  background: #E9E9E9;
+  border-color: transparent;
+}
+
+.done_icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 15px;
+  right: 22px;
+  border-radius: 50%;
+  background: #008535;
+}
+
+.message_sent, .message_not_sent {
+  height: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.message_sent .icon, .message_not_sent .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 21px;
+  width: 21px;
+  height: 21px;
+  margin-right: 17px;
+  border-radius: 50%;
+}
+
+.message_sent {
+  color: #008535;
+}
+.message_sent .icon {
+  background: #008535;
+}
+
+.message_not_sent {
+  color: #B30000;
+}
+.message_not_sent .icon {
+  background: #B30000;
+}
+
 .form_placeholder {
   position: absolute;
   top: 15px;
@@ -519,7 +652,6 @@ h1 {
   line-height: 15px;
   color: #525252;
   position: relative;
-  margin-bottom: 32px;
 }
 .form_checkbox input {
   min-width: 21px;
@@ -553,6 +685,10 @@ h1 {
 .form_checkbox input:checked + label::after {
   background: #008535 url(../img/check.svg) no-repeat center;
   border-color: #008535;
+}
+
+.form_checkbox.error label::after {
+  border-color: #B30000;
 }
 
 .footer {
@@ -733,8 +869,8 @@ h1 {
     min-height: 45px;
     margin: 0;
     margin-bottom: 15px;
-    font-size: 12px;
-    line-height: 16px;
+  }
+  .collection__item.main_btn {
     padding: 15px 0;
   }
   .collection__item:last-child {
@@ -864,7 +1000,7 @@ h1 {
     top: 10px;
     right: 10px;
   }
-  .modal#moda-done .modal__block {
+  .modal#modal-done .modal__block {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -884,7 +1020,7 @@ h1 {
   .modal__done svg {
     width: 34px;
   }
-  .modal#moda-done .modal__title {
+  .modal#modal-done .modal__title {
     margin-bottom: 30px;
   }
   .application__block {
