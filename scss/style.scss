@@ -267,7 +267,7 @@ ul, ol {
     background: url(../img/banner.jpg) no-repeat center / cover;
 }
 
-.title_h1 {
+h1 {
     font-weight: 600;
     font-size: 36px;
     line-height: 49px;
@@ -305,6 +305,9 @@ ul, ol {
     color: #0F0000;
     margin-bottom: 30px;
     transition: all .3s ease;
+}
+.collection__item:last-child {
+    margin-top: 20px;
 }
 .collection__item:nth-child(2n), .collection__item:last-child {
     margin-right: 0;
@@ -423,6 +426,12 @@ ul, ol {
     }
     label {
         cursor: pointer;
+        a {
+            color: #00095C;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     }
     label::after {
         content: "";
@@ -571,12 +580,12 @@ ul, ol {
         height: 55px;
     }
     .banner {
-        padding: 30px 20px;
+        padding: 30px 0;
     }
     .banner__wrap {
         min-height: 190px;
     }
-    .title_h1 {
+    h1 {
         font-size: 28px;
         line-height: 38px;
         margin-bottom: 30px;
@@ -729,5 +738,8 @@ ul, ol {
     }
     .modal#moda-done .modal__title {
         margin-bottom: 30px;
+    }
+    .application__block {
+        max-width: 100%;
     }
 }
