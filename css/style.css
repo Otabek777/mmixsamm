@@ -477,7 +477,7 @@ h1 {
 }
 
 .application__image {
-  width: calc(100% - 730px);
+  width: calc(33% - 10px);
   height: 410px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -491,8 +491,7 @@ h1 {
 }
 
 .application__form {
-  max-width: 730px;
-  width: 100%;
+  width: calc(67% - 10px);
 }
 
 .application__title {
@@ -943,6 +942,9 @@ h1 {
   }
   .black_btn span {
     display: inline-block;
+  }
+  .application__form {
+    width: 100%;
   }
   .application__form .main_btn {
     margin: 0 auto;

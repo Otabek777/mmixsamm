@@ -369,7 +369,7 @@ h1 {
     flex-wrap: wrap;
 }
 .application__image {
-    width: calc(100% - 730px);
+    width: calc(33% - 10px);
     height: 410px;
     display: flex;
     align-items: center;
@@ -378,8 +378,7 @@ h1 {
     }
 }
 .application__form {
-    max-width: 730px;
-    width: 100%;
+    width: calc(67% - 10px);
 }
 .application__title {
     font-weight: 600;
@@ -759,6 +758,9 @@ h1 {
         span {
             display: inline-block;
         }
+    }
+    .application__form {
+        width: 100%;
     }
     .application__form .main_btn {
         margin: 0 auto;
