@@ -58,7 +58,7 @@ ul, ol {
 .black_btn {
     display: inline-block;
     padding: 20px 30px;
-    background: #0F0000;
+    background: #474A51;
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
@@ -69,6 +69,7 @@ ul, ol {
     color: #FFFFFF;
     transition: all .3s ease;
     position: relative;
+    border: 0;
     span {
         display: none;
         white-space: nowrap;
@@ -76,14 +77,18 @@ ul, ol {
     }
 }
 .black_btn:hover {
-    background: #323232;
+    background: #0F0000;
 }
 .black_btn:focus {
-    background: #0F0000;
+    background: #474A51;
+}
+.black_btn.loading {
+    background: #474A51;
 }
 .main_btn {
     padding: 20px 30px;
-    background: #F1C114;
+    background: #FFE600;
+    opacity: 0.9;
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
@@ -123,12 +128,19 @@ ul, ol {
     opacity: 0.9;
 }
 .main_btn:focus {
-    background: #F1C114;
+    background: #FFE600;
     opacity: 0.9;
 }
-.main_btn.disable, .black_btn.disable {
+.main_btn.loading {
+    background: #FFE600;
+    opacity: 0.9;
+}
+.main_btn.disable {
     background: #FFEEB2;
     opacity: 0.9;
+}
+.black_btn.disable {
+    background: #929292;
 }
 
 .modal {
@@ -246,7 +258,7 @@ ul, ol {
 // header
 .header__top {
     padding: 10px 0;
-    background: #F1C114;
+    background: #FFE600;
     font-weight: 600;
     font-size: 24px;
     line-height: 33px;
@@ -287,11 +299,11 @@ ul, ol {
 }
 .header__items:hover {
     svg circle {
-        stroke: #F1C114;
+        stroke: #FFE600;
     }
     svg path {
-        stroke: #F1C114;
-        fill: #F1C114;
+        stroke: #FFE600;
+        fill: #FFE600;
     }
 }
 
@@ -351,8 +363,9 @@ h1 {
 .application {
     padding-bottom: 150px;
 }
-.application__box {
+.application__wrap {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 .application__image {
@@ -572,7 +585,7 @@ h1 {
     transition: all .2s ease;
 }
 .footer__item:hover {
-    color: #F1C114;
+    color: #FFE600;
 }
 .footer__bottom {
     margin-top: 40px;
