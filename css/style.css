@@ -407,11 +407,11 @@ ul, ol {
 }
 
 .header__items:hover svg circle {
-  stroke: #FFE600;
+  stroke: #474A51;
 }
 .header__items:hover svg path {
-  stroke: #FFE600;
-  fill: #FFE600;
+  stroke: #474A51;
+  fill: #474A51;
 }
 
 .banner {
@@ -767,7 +767,7 @@ h1 {
 }
 
 .footer__item:hover {
-  color: #FFE600;
+  color: #474A51;
 }
 
 .footer__bottom {
