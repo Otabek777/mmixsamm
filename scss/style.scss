@@ -56,7 +56,9 @@ ul, ol {
     to {transform: translate(-50%, -50%) rotate(360deg);}
 }
 .black_btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px 30px;
     background: #474A51;
     font-weight: 500;
@@ -86,6 +88,9 @@ ul, ol {
     background: #474A51;
 }
 .main_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px 30px;
     background: #FFE600;
     opacity: 0.9;
@@ -348,8 +353,6 @@ h1 {
     width: 100%;
     min-height: 60px;
     margin-right: 30px;
-    text-align: center;
-    color: #0F0000;
     margin-bottom: 30px;
 }
 .collection__item:last-child {
